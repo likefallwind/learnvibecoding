@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="header">
+    <text class="score">Score: {{score}}</text>
+    <button size="mini" type="primary" bindtap="onRestart" wx:if="{{gameOver}}">Restart</button>
+  </view>
+
+  <canvas 
+    type="2d" 
+    id="gameCanvas" 
+    class="game-canvas"
+    bindtouchstart="onTouchStart"
+    bindtouchmove="onTouchMove"
+    bindtouchend="onTouchEnd"
+  ></canvas>
+
+  <view class="controls">
+    <view class="row">
+      <button class="btn" bindtap="onUp">↑</button>
+    </view>
+    <view class="row">
+      <button class="btn" bindtap="onLeft">←</button>
+      <button class="btn" bindtap="onDown">↓</button>
+      <button class="btn" bindtap="onRight">→</button>
+    </view>
+  </view>
+  
+  <view class="instructions">
+    <text>Swipe or use buttons to move</text>
+  </view>
+</view>
