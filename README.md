@@ -1,23 +1,48 @@
-# AI E-com Studio
+# 微信小程序贪吃蛇
 
-单页高保真前端原型，用于演示 AI 生成电商产品图与营销文案的流程。页面包含左侧表单与右侧结果画布，支持图片预览、生成加载态与多卡片结果展示。
+一个基于 Canvas 2D 的简单贪吃蛇微信小程序。支持触控滑动与按钮操作，包含计分与重开。
 
-## 技术栈
+## 技术方案
 
-- React (Vite)
-- Tailwind CSS
-- lucide-react
-- framer-motion
+- 原生微信小程序
+- Canvas 2D 渲染
+- 游戏逻辑与渲染解耦（游戏核心放在 utils 中）
 
-## 本地运行
+## 目录结构
 
-```bash
-npm install
-npm run dev
+```
+.
+├── app.js
+├── app.json
+├── app.wxss
+├── project.config.json
+├── sitemap.json
+├── pages
+│   └── index
+│       ├── index.js
+│       ├── index.json
+│       ├── index.wxml
+│       └── index.wxss
+└── utils
+    └── snake-game.js
 ```
 
-## 功能概览
+## 运行方式
 
-- 左侧固定 380px 控制面板：图片上传预览、产品名、卖点、风格选择
-- 右侧可滚动画布：空状态占位、生成后 4 张产品卡片
-- 生成动效：点击生成后 1.5 秒加载，再填充卡片文案与样式
+1. 打开微信开发者工具
+2. 导入项目，目录选择本项目根目录
+3. 使用测试号 AppID 或替换为自己的 AppID
+4. 点击编译即可运行
+
+## 操作说明
+
+- 点击方向按钮或在画布上滑动来控制方向
+- 吃到红色食物得分
+- 撞墙或撞到自身游戏结束，可点击 Restart 重新开始
+
+## 关键文件
+
+- [index.js](file:///home/likefallwind/code/learnvibecoding/pages/index/index.js)
+- [index.wxml](file:///home/likefallwind/code/learnvibecoding/pages/index/index.wxml)
+- [index.wxss](file:///home/likefallwind/code/learnvibecoding/pages/index/index.wxss)
+- [snake-game.js](file:///home/likefallwind/code/learnvibecoding/utils/snake-game.js)
